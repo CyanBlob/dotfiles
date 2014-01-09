@@ -1,0 +1,46 @@
+! Molokai theme
+*background: #101010
+*foreground: #d0d0d0
+!*cursorColor: #d0d0d0
+
+!! Black
+*color0: #101010
+*color8: #303030
+
+!! Red
+*color1: #960050
+*color9: #ff0090
+
+!! Green
+*color2: #66aa11
+*color10: #80ff00
+
+!! Yellow
+*color3: #c47f2c
+*color11: #ffba68
+
+!! Blue
+*color4: #30309b
+*color12: #5f5fee
+
+!! Magenta
+*color5: #7e40a5
+*color13: #bb88dd
+
+!! Cyan
+*color6: #3579a8
+*color14: #4eb4fa
+
+!! White
+*color7: #9999aa
+*color15: #d0d0d0
+
+
+URxvt*geometry:         300x300
+!URxvt*font:             Open Sans:size=8
+URxvt*font:            xft:consolas:size=8
+!!URxvt*urlLauncher:         firefox
+URxvt*scrollBar:        false
+!!URxvt*scrollBar_right:        true
+!!URxvt*scrollColor:        #000000
+!

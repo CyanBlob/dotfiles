@@ -1,0 +1,19 @@
+#
+# /home/andrew-arch/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
+# Generated on Sat Jan  4 18:17:36 2014
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+ToolTips = Yes
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = No
+ShowQuitDialog = Yes
+UpdateRulesOnProfileNameChange = Yes
+
+# Attributes:
+
