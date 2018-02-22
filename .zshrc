@@ -1,14 +1,20 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Path to your oh-my-zsh installation.
+  export ZSH=/home/andrew/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -51,7 +57,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -68,7 +73,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -78,17 +83,18 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias aptupdate="sudo apt-get update "
-alias aptinstall="sudo apt-get install "
-alias aptupgrade="sudo apt-get upgrade "
-alias aptdistupgrade="sudo apt-get distupgrade "
-alias aptsearch="apt-cache search "
-alias aptremove="sudo apt-get remove "
-alias aptpurge="sudo apt-get purge "
 
-HISTSIZE=10000
-SAVEHIST=10000
-HISTFILE=~/.history
+# PROJECT_*
+export PROJECT_BUILD_RESOURCES=/home/andrew/pnvserv/Projects/depot01/BuildResources
+export PROJECT_RESOURCES=/home/andrew/pnvserv/Projects/depot01/install/resources
+export PROJECT_ROOT=/home/andrew/pnvserv/Projects/depot01
 
-#Solarized directory names
-eval `dircolors ~/.dircolors` 
+# Perforce
+export P4USER=athomas
+export P4CLIENT=pnv_serv
+export P4PORT=perforce:1666
+export P4PASSWD=Zelada7417
+# nvim
+export TERM=xterm-256color
+
+alias vim=nvim
