@@ -1,10 +1,6 @@
 execute pathogen#infect()
-syntax on filetype plugin indent on
-colorscheme molokai
-set backspace=2 " make backspace work like most other apps
-
-" Use deoplete.
-" let g:deoplete#enable_at_startup = 1
+syntax on
+filetype plugin indent on
 
 " kernel dev
 "set tabstop=8           " number of visual spaces per TAB
@@ -18,7 +14,7 @@ highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 set tabstop=4           " number of visual spaces per TAB
 set softtabstop=4       " number of spaces in tab when editing
 set shiftwidth=4
-set expandtab           " tabs are spaces
+set noexpandtab           " tabs are spaces
 
 set number              " show line numbers
 set rnu                 " enable relative line numbers
@@ -33,12 +29,6 @@ set foldlevelstart=100  " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 
 set updatetime=250      " reduce time to show markers (git/syntastic)
-
-set noincsearch
-
-" manually enable cindent (should be enabled by default, but not working)
-autocmd FileType c set cindent
-autocmd FileType cpp set cindent
 
 augroup MyHighlighter
   autocmd!
@@ -84,8 +74,8 @@ let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_auto_start_csharp_server = 1
 let g:ycm_auto_stop_csharp_server = 1
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '/home/andrew/.vim/.ycm_extra_conf.py'
-"let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
 
@@ -110,9 +100,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "vim-airline
-let g:airline#extensions#tabline#enabled = 1
-"let g:airline_section_b = '%{strftime("%c")}'
-let g:airline_section_y = 'BN: %{bufnr("%")}'
 let g:airline_powerline_fonts = 1
 set laststatus=2
 
@@ -159,10 +146,5 @@ nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 "if $TERM == "xterm-256color"
-  set t_Co=256
+  "set t_Co=256
 "endif
-"set termguicolors
-
-"ONLY apply the linux coding style plugin in certain dirs (overrides
-"indentation rules)
-let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
