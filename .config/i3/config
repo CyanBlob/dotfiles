@@ -251,14 +251,17 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 
 # force windows to workspaces
-assign [class="ModelInterface"] $ws4
+assign [class="PMIT"] $ws4
+assign [class="Handset"] $ws4
 
-exec --no-startup-id i3-msg 'workspace 2; exec QT_QUICK_BACKEND=software qutebrowser'
+#exec --no-startup-id i3-msg 'workspace 2; exec QT_QUICK_BACKEND=software qutebrowser'
 exec --no-startup-id i3-msg 'workspace 8; exec pidgin'
 exec --no-startup-id i3-msg 'workspace 9; exec mono ~/KeePass/KeePass.exe'
-exec --no-startup-id i3-msg 'workspace 10; exec localc'
-exec --no-startup-id sleep 1 && feh --bg-scale "/home/andrew/Pictures/i3_solarized.png"
+#exec --no-startup-id i3-msg 'workspace 10; exec localc'
+exec --no-startup-id sleep 1 && feh --bg-scale "/home/andrew/Pictures/plasma+5.13.png"
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon-localeexec
+
+exec --no-startup-id dunst --config ~/.config/dunst/dunstrc
 
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-keyboard

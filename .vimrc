@@ -166,3 +166,41 @@ set listchars=tab:▸\ ,eol:¬
 "ONLY apply the linux coding style plugin in certain dirs (overrides
 "indentation rules)
 let g:linuxsty_patterns = [ "/usr/src/", "/linux" ]
+
+function AskForConfirmation(cmd)
+    while 1
+        redraw!
+        echohl WarningMsg
+        echo 'Really perform action: ' . a:cmd . '?'
+        echohl None
+        let choice = inputlist(['1. yes', '2. no'])
+        if choice == 0 || choice > 2
+            redraw!
+            echohl WarningMsg
+            echo 'Please enter a number between 1 and 2'
+            echohl None
+            continue
+        elseif choice == 1
+            return 1
+        else
+            return 0
+        endif
+        break
+endfunction
+
+function P4Edit()
+    :!remoteP4.sh p4 edit %
+endfunction
+
+function P4Revert()
+    if AskForConfirmation('REVERT ' . expand('%')) == 1
+        :!remoteP4.sh p4 revert %
+    endif
+endfunction
+
+" open file for editing on remote Perforce workspace
+map <F2> :call P4Edit()<CR>
+imap <F2> :call P4Edit()<CR>
+
+map <F8> :call P4Revert()<CR>
+imap <F8> :call P4Revert()<CR>

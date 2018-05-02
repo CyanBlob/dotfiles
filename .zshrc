@@ -85,13 +85,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # PROJECT_*
-export PROJECT_BUILD_RESOURCES=/home/andrew/pnvserv/Projects/depot01/BuildResources
-export PROJECT_RESOURCES=/home/andrew/pnvserv/Projects/depot01/install/resources
-export PROJECT_ROOT=/home/andrew/pnvserv/Projects/depot01
+export PROJECT_BUILD_RESOURCES=/home/andrew/pnvserv/Perforce/depot01/BuildResources
+export PROJECT_RESOURCES=/home/andrew/pnvserv/Perforce/depot01/install/resources
+export PROJECT_ROOT=/home/andrew/pnvserv/Perforce/depot01
 
 # Perforce
 export P4USER=athomas
-export P4CLIENT=pnv_serv
+export P4CLIENT=athomas_pnvcsrv
 export P4PORT=perforce:1666
 export P4PASSWD=Zelada7417
 # nvim
