@@ -98,8 +98,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # assign monitors
-set $mon1 VGA-1
-set $mon2 VGA-2
+set $mon1 DP-2
+set $mon2 DP-3
 
 # assign workspace names
 set $ws1 1
@@ -253,11 +253,11 @@ bindsym $mod+Pause mode "$mode_system"
 # force windows to workspaces
 assign [class="ModelInterface"] $ws4
 
-exec --no-startup-id i3-msg 'workspace 2; exec QT_QUICK_BACKEND=software qutebrowser'
-exec --no-startup-id i3-msg 'workspace 8; exec pidgin'
-exec --no-startup-id i3-msg 'workspace 9; exec mono ~/KeePass/KeePass.exe'
-exec --no-startup-id i3-msg 'workspace 10; exec localc'
-exec --no-startup-id sleep 1 && feh --bg-scale "/home/andrew/Pictures/i3_solarized.png"
+#exec --no-startup-id i3-msg 'workspace 2; exec QT_QUICK_BACKEND=software qutebrowser'
+#exec --no-startup-id i3-msg 'workspace 8; exec pidgin'
+#exec --no-startup-id i3-msg 'workspace 9; exec mono ~/KeePass/KeePass.exe'
+#exec --no-startup-id i3-msg 'workspace 10; exec localc'
+exec --no-startup-id sleep 1 && feh --bg-scale "/home/andrew/Pictures/03 - Dq9xEIz.jpg"
 #exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon-localeexec
 
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gsd-xsettings

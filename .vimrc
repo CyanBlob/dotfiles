@@ -11,9 +11,9 @@ set colorcolumn=81
 highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 
 " normal dev
-set tabstop=4           " number of visual spaces per TAB
-set softtabstop=4       " number of spaces in tab when editing
-set shiftwidth=4
+set tabstop=2           " number of visual spaces per TAB
+set softtabstop=2       " number of spaces in tab when editing
+set shiftwidth=2
 set noexpandtab           " tabs are spaces
 
 set number              " show line numbers
@@ -29,6 +29,9 @@ set foldlevelstart=100  " open most folds by default
 set foldnestmax=10      " 10 nested fold max
 
 set updatetime=250      " reduce time to show markers (git/syntastic)
+
+" disable YCM linting
+let g:ycm_show_diagnostics_ui = 0
 
 augroup MyHighlighter
   autocmd!
@@ -58,6 +61,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%{fugitive#statusline()}
 set statusline+=%*
+
+" disable checks for dart files
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["dart"] }
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
@@ -148,3 +156,24 @@ set listchars=tab:▸\ ,eol:¬
 "if $TERM == "xterm-256color"
   "set t_Co=256
 "endif
+
+" autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+" autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+
+" dart specific
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+let g:lsc_auto_map = v:false " Use defaults
+" disable LSC highlighting
+let g:lsc_reference_highlights = v:false
+" ... or set only the keys you want mapped, defaults are:
+let g:lsc_auto_map = {
+    \ 'GoToDefinition': '<C-]>',
+    \ 'FindReferences': 'gr',
+    \ 'NextReference': '<C-n>',
+    \ 'FindImplementations': 'gI',
+    \ 'FindCodeActions': 'ga',
+    \ 'DocumentSymbol': 'go',
+    \ 'WorkspaceSymbol': 'gS',
+    \ 'ShowHover': 'K',
+    \ 'Completion': 'completefunc',
+    \}

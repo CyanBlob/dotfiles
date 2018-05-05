@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/andrew/.oh-my-zsh
+export ZSH=/home/andrew/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -51,7 +51,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-completions)
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,4 +98,8 @@ export P4PASSWD=Zelada7417
 # nvim
 export TERM=xterm-256color
 
-alias vim=nvim
+export PATH=$PATH:/opt/flutter/bin/cache/dart-sdk/bin:/opt/flutter/.pub-cache/bin:/opt/flutter/bin:/usr/local/android-studio/bin:/home/andrew/Android/Sdk/emulator:~/.pub-cache/bin:~/Android/sdk
+
+#alias vim=nvim
+
+export USE_CCACHE=1
