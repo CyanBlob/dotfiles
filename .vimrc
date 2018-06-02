@@ -14,7 +14,7 @@ highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 set tabstop=2           " number of visual spaces per TAB
 set softtabstop=2       " number of spaces in tab when editing
 set shiftwidth=2
-set noexpandtab           " tabs are spaces
+set expandtab           " tabs are spaces
 
 set number              " show line numbers
 set rnu                 " enable relative line numbers
@@ -86,6 +86,19 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_server_python_interpreter = '/usr/bin/python2'
 let g:ycm_server_keep_logfiles = 1
 let g:ycm_server_log_level = 'debug'
+let g:ycm_filetype_blacklist = { 'dart': 1 }
+
+" Deoplete options
+let g:deoplete#enable_at_startup = 1
+" use tab to forward cycle
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" use tab to backward cycle
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+" ignore short matches
+call deoplete#custom#option('min_pattern_length', 2)
+call deoplete#custom#option('deoplete-source-attribute-min_pattern_length', 2)
+" display popup after first char
+let g:deoplete#auto_complete_start_length = 0
 
 " Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
@@ -132,12 +145,16 @@ inoremap <right> <nop>
 set mouse=r
 
 " CtrlP remaps (fuzzy finder)
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " NERDTree remaps
 map <C-n> :NERDTreeToggle<CR>
+
+" fzf.vim
+map <C-p> :Files<CR>
+map <A-p> :Buffers<CR>
 
 " NERDTree auto-open
 " autocmd vimenter * NERDTree
@@ -169,7 +186,6 @@ let g:lsc_reference_highlights = v:false
 let g:lsc_auto_map = {
     \ 'GoToDefinition': '<C-]>',
     \ 'FindReferences': 'gr',
-    \ 'NextReference': '<C-n>',
     \ 'FindImplementations': 'gI',
     \ 'FindCodeActions': 'ga',
     \ 'DocumentSymbol': 'go',

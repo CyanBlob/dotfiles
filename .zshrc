@@ -85,20 +85,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# PROJECT_*
-export PROJECT_BUILD_RESOURCES=/home/andrew/pnvserv/Projects/depot01/BuildResources
-export PROJECT_RESOURCES=/home/andrew/pnvserv/Projects/depot01/install/resources
-export PROJECT_ROOT=/home/andrew/pnvserv/Projects/depot01
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Perforce
-export P4USER=athomas
-export P4CLIENT=pnv_serv
-export P4PORT=perforce:1666
-export P4PASSWD=Zelada7417
 # nvim
 export TERM=xterm-256color
 
-export PATH=$PATH:/opt/flutter/bin/cache/dart-sdk/bin:/opt/flutter/.pub-cache/bin:/opt/flutter/bin:/usr/local/android-studio/bin:/home/andrew/Android/Sdk/emulator:~/.pub-cache/bin:~/Android/sdk
+export PATH=$PATH:/opt/flutter/bin/cache/dart-sdk/bin:/opt/flutter/.pub-cache/bin:/opt/flutter/bin:/usr/local/android-studio/bin:/home/andrew/Android/Sdk/emulator:~/.pub-cache/bin:~/Android/sdk:/opt/android-sdk/platform-tools/
 
 #alias vim=nvim
 
