@@ -1,4 +1,32 @@
-execute pathogen#infect()
+" automatically install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" install plugins
+call plug#begin('~/.vim/plugged')
+Plug 'w0rp/ale'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'shougo/deoplete.nvim'
+Plug 'tweekmonster/deoplete-clang2'
+Plug 'junegunn/fzf.vim'
+"Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'sirver/ultisnips'
+Plug 'vim-airline/vim-airline'
+"Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'natebosch/vim-lsc'
+Plug 'honza/vim-snippets'
+Plug 'tpope/vim-surround'
+call plug#end()
+
+"execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
