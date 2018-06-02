@@ -170,9 +170,13 @@ nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
-"if $TERM == "xterm-256color"
-  "set t_Co=256
-"endif
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
+
+set termguicolors
+set background=dark
+colorscheme gruvbox
 
 " autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 " autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
